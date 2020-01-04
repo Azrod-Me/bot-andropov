@@ -3,13 +3,12 @@ const client = new Discord.Client()
 const fs = require('fs')
 const FileSync = require("lowdb/adapters/FileSync")
 
-
-
 let prefix = "!"
 
 const warns = JSON.parse(fs.readFileSync('./warns.json'))
  
-client.login(process.env.TOKEN)
+client.login(process.env.TOKEN);
+
  //join et addrole
 client.on('guildMemberAdd', function (member) {
     let embed = new Discord.RichEmbed()
