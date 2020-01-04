@@ -1,9 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const fs = require('fs')
-const moment = require('moment');
-const weather = require('weather-js'); 
-const low = require("lowdb")
 const FileSync = require("lowdb/adapters/FileSync")
 
 
@@ -12,7 +9,7 @@ let prefix = "!"
 
 const warns = JSON.parse(fs.readFileSync('./warns.json'))
  
-client.login('NjUzMzA4ODE2ODYzMjY0NzY4.Xe4ejw.SHmyNwCni0pOC14cuD1ubkhQ-og')
+client.login(process.env.TOKEN)
  //join et addrole
 client.on('guildMemberAdd', function (member) {
     let embed = new Discord.RichEmbed()
@@ -20,8 +17,8 @@ client.on('guildMemberAdd', function (member) {
     .setAuthor(member.user.username, member.user.displayAvatarURL)
     .setDescription("WoW " + member.user + " a rejoins notre serveur")
     .setFooter('Nous sommes désormais ' + member.guild.memberCount)
-    member.guild.channels.get('653583929827262464').send(embed)
-    member.addRole('653162430922227722')
+    member.guild.channels.get('662714899129958447').send(embed)
+    member.addRole('662725948591964160')
 })
 
 
